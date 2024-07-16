@@ -53,8 +53,8 @@ dependencies {
 
     implementation(libs.okhttp)
     implementation(libs.retrofit)
-    implementation(libs.moshi)
-    implementation(libs.retrofit2.converter.moshi)
+    implementation(libs.gson)
+    implementation(libs.converter.gson)
     implementation(libs.logging.interceptor)
 
     implementation(libs.koin.android)
