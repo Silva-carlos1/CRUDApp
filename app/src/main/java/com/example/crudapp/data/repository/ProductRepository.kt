@@ -9,4 +9,7 @@ class ProductRepository(private val productApiService: ProductApiService) {
     suspend fun getAllProducts() = productApiService.getAllProducts()
 
     suspend fun createProduct(product: CreateProductDto) = productApiService.createProduct(product)
+
+    suspend fun updateProduct(id: String, updateProductDTO: UpdateProductDto) =
+        productApiService.updateProduct(id, updateProductDTO)
 }

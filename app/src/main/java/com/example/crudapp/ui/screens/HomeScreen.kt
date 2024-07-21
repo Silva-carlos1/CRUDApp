@@ -63,7 +63,12 @@ fun HomeScreen(
 
         LazyColumn(modifier = Modifier.fillMaxWidth()) {
             items(state.products) {
-                ProductItem(product = it, modifier = Modifier.fillMaxWidth()
+                ProductItem(
+                    product = it,
+                    onEdit = {
+                    viewModel.editProduct(it)
+                },
+                    modifier = Modifier.fillMaxWidth(),
                 )
             }
         }

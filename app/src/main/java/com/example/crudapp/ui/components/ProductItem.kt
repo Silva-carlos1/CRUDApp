@@ -4,6 +4,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -16,6 +17,7 @@ import com.example.crudapp.model.Product
 @Composable
 fun ProductItem(
     product: Product,
+    onEdit: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -45,6 +47,13 @@ fun ProductItem(
                     style = MaterialTheme.typography.bodyMedium,
                     color = MaterialTheme.colorScheme.onSurface
                 )
+            }
+
+            Button(
+                onClick = onEdit,
+                modifier = Modifier.padding(start = 8.dp)
+            ) {
+                Text(text = "Edit")
             }
         }
     }

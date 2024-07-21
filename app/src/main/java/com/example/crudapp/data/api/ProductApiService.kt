@@ -18,4 +18,7 @@ interface ProductApiService {
 
     @GET("/products")
     suspend fun getAllProducts(): ProductsResponse
+
+    @PATCH("products/{id}")
+    suspend fun updateProduct(@Path("id") id: String, @Body productUpdateDTO: UpdateProductDto): ProductResponse
 }
