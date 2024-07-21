@@ -18,6 +18,7 @@ import com.example.crudapp.model.Product
 fun ProductItem(
     product: Product,
     onEdit: () -> Unit,
+    onDelete: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Surface(
@@ -54,6 +55,12 @@ fun ProductItem(
                 modifier = Modifier.padding(start = 8.dp)
             ) {
                 Text(text = "Edit")
+            }
+            Button(
+                onClick = onDelete,
+                modifier = Modifier.padding(start = 8.dp)
+            ) {
+                Text(text = "Delete")
             }
         }
     }

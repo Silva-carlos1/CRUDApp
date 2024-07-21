@@ -68,6 +68,9 @@ fun HomeScreen(
                     onEdit = {
                     viewModel.editProduct(it)
                 },
+                    onDelete = {
+                        viewModel.deleteProduct(it)
+                    },
                     modifier = Modifier.fillMaxWidth(),
                 )
             }

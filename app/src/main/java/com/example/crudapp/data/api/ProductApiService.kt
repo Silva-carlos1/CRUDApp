@@ -6,6 +6,7 @@ import com.example.crudapp.data.model.ProductsResponse
 import com.example.crudapp.data.model.UpdateProductDto
 import com.example.crudapp.model.Product
 import retrofit2.http.Body
+import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.PATCH
 import retrofit2.http.POST
@@ -21,4 +22,7 @@ interface ProductApiService {
 
     @PATCH("products/{id}")
     suspend fun updateProduct(@Path("id") id: String, @Body productUpdateDTO: UpdateProductDto): ProductResponse
+
+    @DELETE("products/{id}")
+    suspend fun deleteProduct(@Path("id") id: String): Unit
 }

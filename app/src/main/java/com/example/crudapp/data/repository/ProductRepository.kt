@@ -12,4 +12,6 @@ class ProductRepository(private val productApiService: ProductApiService) {
 
     suspend fun updateProduct(id: String, updateProductDTO: UpdateProductDto) =
         productApiService.updateProduct(id, updateProductDTO)
+
+    suspend fun deleteProduct(id: String) = productApiService.deleteProduct(id)
 }

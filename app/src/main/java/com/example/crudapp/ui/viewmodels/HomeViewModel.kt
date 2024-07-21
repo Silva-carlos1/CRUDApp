@@ -55,6 +55,17 @@ class HomeViewModel(
         )
     }
 
+    fun deleteProduct(product: Product) {
+        viewModelScope.launch {
+            try {
+                productRepository.deleteProduct(product.id)
+            } catch (e: Exception) {
+                println()
+            }
+            getProducts()
+        }
+    }
+
     fun createProduct() {
         val product =
             CreateProductDto(
